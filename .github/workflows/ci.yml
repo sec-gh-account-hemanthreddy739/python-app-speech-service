@@ -1,9 +1,8 @@
 name: text-to-speech-service-ci-workflow
 
 on:
-  workflow_dispatch:
-  # repository_dispatch:
-  #   types: [run_build]
+  repository_dispatch:
+    types: [run_build]
 
 
 jobs:
@@ -17,12 +16,3 @@ jobs:
         run: |
             docker build -t text-to-speech-app:latest .
             echo "docker image builded successfully"
-
-      - name: sample build file
-        run: echo "it is a build code" > build.py
-
-      - name: upload build artifact
-        uses: actions/upload-artifact@v4.6.2
-        with:
-          name: "speech-service-artifact"
-          path: "build.py"
