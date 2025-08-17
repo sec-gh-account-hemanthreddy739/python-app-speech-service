@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         with:
           name: "speech-service-artifact"
-          path: "speech-build"
+          path: "build.py"
